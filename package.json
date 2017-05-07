@@ -14,7 +14,7 @@
     "url": "git+https://github.com/angelbeltran/esdoc-saga-plugin.git"
   },
   "author": "Angel Beltran",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/angelbeltran/esdoc-saga-plugin/issues"
   },
