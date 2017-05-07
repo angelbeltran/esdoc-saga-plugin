@@ -15,6 +15,20 @@ export function* someSaga (someArg1, someArg2, someArg3) {
 }
 
 /**
+ * @param {string} anotherArg1 - another string
+ * @param {number} anotherArg2 - another number
+ * @param {boolean} anotherArg3 - another boolean
+ * @sagaselect anotherSubstate - another part of the state
+ * @sagaput ANOTHER_ACTION_TYPE - another action type
+ * @sagacall anotherApiCall - another api call
+ */
+function* anotherSaga (anotherArg1, anotherArg2, anotherArg3) {
+  const anotherThing = yield select((state) => state.anotherSubstate)
+
+  return !!anotherThing.anotherThing
+}
+
+/**
  * @example const inst = new SomeClass(val)
  */
 class SomeClass {
