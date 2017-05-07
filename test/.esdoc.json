@@ -1,0 +1,39 @@
+{
+  "source": "./short-example",
+  "destination": "./doc",
+  "package": false,
+  "plugins": [
+    {"name": "../"},
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "lint": true,
+        "coverage": true,
+        "access": ["public", "protected", "private"],
+        "autoPrivate": true,
+        "undocumentIdentifier": true,
+        "unexportedIdentifier": true,
+        "title": "My Library",
+        "repository": "https://github.com/foo/bar",
+        "typeInference": true
+      }
+    },
+    {
+      "name": "esdoc-ecmascript-proposal-plugin",
+      "option": {
+        "classProperties": true,
+        "objectRestSpread": true,
+        "doExpressions": true,
+        "functionBind": true,
+        "functionSent": true,
+        "asyncGenerators": true,
+        "decorators": true,
+        "exportExtensions": true,
+        "dynamicImport": true,
+        "debug": true
+      }
+    }
+  ],
+  "builtinExternal": false,
+  "index": "./short-example/index.js"
+}

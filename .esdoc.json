@@ -1,0 +1,4 @@
+{
+  "source": "./node_modules/esdoc/out/src",
+  "destination": "./doc"
+}

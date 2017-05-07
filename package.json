@@ -1,0 +1,32 @@
+{
+  "name": "esdoc-saga-plugin",
+  "version": "0.1.0",
+  "description": "An ESDoc plugin for describing sagas",
+  "main": "src/new-index.js",
+  "directories": {
+    "src": "src"
+  },
+  "scripts": {
+    "test": "cd test && esdoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelbeltran/esdoc-saga-plugin.git"
+  },
+  "author": "Angel Beltran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelbeltran/esdoc-saga-plugin/issues"
+  },
+  "homepage": "https://github.com/angelbeltran/esdoc-saga-plugin#readme",
+  "devDependencies": {
+    "esdoc": "^1.0.0-alpha",
+    "esdoc-ecmascript-proposal-plugin": "0.0.2",
+    "esdoc-standard-plugin": "0.0.2",
+    "install": "^0.10.0",
+    "npm": "^4.5.0"
+  },
+  "dependencies": {
+    "htmlparser2": "^3.9.2"
+  }
+}
