@@ -34,5 +34,5 @@
     }
   ],
   "builtinExternal": false,
-  "index": "./src/index.js"
+  "index": "./README.md"
 }

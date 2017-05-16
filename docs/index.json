@@ -891,9 +891,9 @@
   },
   {
     "kind": "index",
-    "content": "const SagaPlugin = require('./SagaPlugin')\n\n\nconst sagaPlugin = new SagaPlugin()\n\nmodule.exports.onHandleContent = function(ev) {\n  ev.data.content = sagaPlugin.exec(ev.data.content)\n};\n\nmodule.exports.onHandleDocs = function(ev) {\n  ev.data.docs.filter(d => d.kind === 'function').forEach((d) => {\n    if (d.unknown) {\n      for (let i = 0; i < d.unknown.length; i++) {\n        const unknownTag = d.unknown[i].tagName\n        if (unknownTag.indexOf('@saga') === 0) {\n          sagaPlugin.push(d)\n          break\n        }\n      }\n    }\n  })\n};\n",
-    "longname": "/home/angel/dev/esdoc-saga-plugin/src/index.js",
-    "name": "./src/index.js",
+    "content": "# esdoc-saga-plugin\nAn ESDoc plugin for sagas\n\n## Description\nAdds tag recognition to ESDoc for saga effect descriptions. For example\n\n```javascript\n/**\n * @param {string} someArg1 - some string\n * @param {number} someArg2 - some number\n * @param {boolean} someArg3 - some boolean\n * @sagaselect someSubstate - some part of the state\n * @sagatake SOME_ACTION_TYPE - some action type\n * @sagacall someApiCall - some api call\n */\nexport function* someSaga (someArg1, someArg2, someArg3) {\n  const someSubstate = yield select((state) => state.someSubstate)\n \n  if (someSubstate.someProp) {\n    yield put({ type: 'SOME_ACTION_TYPE' })\n    yield call(someApiCall)\n  }\n}\n```\n",
+    "longname": "/home/angel/dev/esdoc-saga-plugin/README.md",
+    "name": "./README.md",
     "static": true,
     "access": "public"
   },
