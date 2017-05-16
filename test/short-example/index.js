@@ -1,6 +1,7 @@
 import { take, put, call, fork, select, all } from 'redux-saga/effects'
 
 /**
+ * Some saga
  * @param {string} someArg1 - some string
  * @param {number} someArg2 - some number
  * @param {boolean} someArg3 - some boolean
@@ -26,6 +27,18 @@ function* anotherSaga (anotherArg1, anotherArg2, anotherArg3) {
   const anotherThing = yield select((state) => state.anotherSubstate)
 
   return !!anotherThing.anotherThing
+}
+
+/**
+ * A saga with no params
+ * @sagaselect anotherSubstate - another part of the state
+ * @sagaput ANOTHER_ACTION_TYPE - another action type
+ * @sagacall anotherApiCall - another api call
+ */
+function* noParamsSaga () {
+  const whatever = yield select((state) => state.whatever)
+
+  return !!whatever.whatever
 }
 
 /**

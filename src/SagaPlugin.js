@@ -1,23 +1,79 @@
 const htmlparser = require("htmlparser2")
 
 
+/**
+ * The plugin aggregates sagas found during parsing using
+ * it's push method, and inserts content into the html
+ * based on the sagas using the exec method
+ */
 module.exports = class SagaPlugin {
+  /**
+   * Initialized the list of sagas, optionally accepting a list
+   * of sagas to initialize with
+   * @param {function[]} sagas - array of sagas, generator functions
+   * saga* tags
+   */
   constructor (sagas) {
     // for tracking the sagas being documented
-    this._sagas = sagas || []
+    /**
+     * @type {function[]} sagas with documentation to create
+     */
+    this._sagas = [].concat(sagas || [])
   }
 
+  /**
+   * Simply pushes its arguments to the saga list
+   * @public
+   */
   push () {
-    this._sagas.push.apply(this._sagas, arguments)
+    for (let i = 0; i < arguments.length; this._sagas.push(arguments[i++])) {}
   }
 
-  _isHTML (content) {
+  /**
+   * Checks if a string is html
+   * @param {string} content
+   * @private
+   */
+  isHTML (content) {
     return content.indexOf('<!DOCTYPE html>') === 0
   }
 
   /**
-   * dom json format
-   *
+   * Generates a saga effect table row
+   * @param {object} tag - a ESDoc tag object
+   * @return {string} an html <tr>
+   * @private
+   */
+  generateTableEntry (tag) {
+    const name = tag.tagName.slice(5)
+    const splitValue = tag.tagValue.split(' - ')
+    const value = splitValue[0]
+    const desc = splitValue[1]
+
+    return `      <tr data-ice="property" data-depth="0">
+      <td data-ice="type" class="code" data-depth="0">${name}</td>
+      <td data-ice="value" class="code">${value}</td>
+      <td data-ice="description"><p>${desc}</p></td>
+    </tr>`
+  }
+
+  /**
+   * Generates an html table for saga effect info, if any, on a doc
+   * @param {object} doc - an ESDoc doc object
+   * @return {string} rows, html <tr>, for a saga effect table
+   * @private
+   */
+  parseSagaTags (doc) {
+    return (doc.unknown || [])
+      .filter((tag) => tag.tagName.indexOf('@saga') === 0)
+      .map(this.generateTableEntry)
+      .join('\n')
+  }
+
+  /**
+   * Travels a dom tree, and inserts a saga effects tables if the
+   * appropriate location is found.
+   * Expects dom to be in the json format:
    * {
    *   data: String,
    *   type: String, // e.g. tag or text
@@ -28,38 +84,52 @@ module.exports = class SagaPlugin {
    *   prev: Node,
    *   parent: Node,
    * }
+   * @param {Object} contentWrapper
+   * @property {string} content - an html string
+   * @private
    */
-
-  exec (content) {
-    if (!this._isHTML(content)) {
-      return content
-    }
-
-    const domHandler = new htmlparser.DomHandler((error, dom) => {
+  getDomInjector (contentObj) {
+    return (error, dom) => {
       if (error) {
         console.error(error)
         return
       }
 
       this._sagas.forEach((saga) => {
-        // <html><body><div class="content"><div data-ice="details"><div class="detail">
+        /* Attach the table to the bottom of the tree:
+         *  <html>
+         *    <body class="layout-container" data-ice="rootContainer">
+         *      <div class="content" data-ice="content">
+         *        <div data-ice="details">
+         *          <div class="detail" data-ice="detail">
+         *            <h3 data-ice="anchor" id="static-function-${saga.name}>
+         *            < ... >
+         *            < insert node here >
+         */
+        /**
+         * @type {Array<function(n: object, s: object)>} list of dom queries
+         */
         const query = [
           (n) => n.name === 'html',
           (n) => n.name === 'body' && n.attribs.class === 'layout-container' && n.attribs['data-ice'] === 'rootContainer',
           (n) => n.name === 'div' && n.attribs.class === 'content' && n.attribs['data-ice'] === 'content',
           (n) => n.name === 'div' && n.attribs['data-ice'] === 'details',
           (n) => n.name === 'div' && n.attribs.class === 'detail' && n.attribs['data-ice'] === 'detail',
-          (n, s) => n.name === 'div' && n.attribs['data-ice'] === 'properties' && s.length && s[1].name === 'h3' && s[1].attribs.id === `static-function-${saga.name}`,
-          (n) => n.name === 'div' && n.attribs['data-ice'] === 'properties',
+          (n) => n.name === 'h3' && n.attribs['data-ice'] === 'anchor' && n.attribs.id === `static-function-${saga.name}`,
         ]
         // query = [(HtmlNode) => Boolean]
-        function search (query, node, siblings) {
-          if (query[0](node, siblings)) {
+        /**
+         * Finds a dom node matching a query
+         * @param {Array<function(n: object, s: object)>} query to perform upon dom node and descendants
+         * @param {object} node - dom node to query
+         */
+        function search (query, node) {
+          if (query[0](node)) {
             if (query.length === 1) {
               return node
             } else {
               return (node.children || []).reduce(
-                (match, child, i, siblings) => match || search(query.slice(1), child, siblings),
+                (match, child, i) => match || search(query.slice(1), child),
                 null
               )
             }
@@ -68,40 +138,21 @@ module.exports = class SagaPlugin {
           return null
         }
 
-        // find the html node to add our redux-saga info to
-        let node
+        /**
+         * The matching html node, if found
+         * @type {object}
+         */
+        let anchorNode
         for (let i = 0; i < dom.length; i++) {
-          node = search(query, dom[i], dom)
-          if (node) {
+          anchorNode = search(query, dom[i], dom)
+          if (anchorNode) {
             break
           }
         }
-        if (!node) {
+        if (!anchorNode) {
           return
         }
-
-        // generate additional html for saga effect info (if any)
-        function parseSagaTags (doc) {
-          return doc.unknown
-            .reduce((tags, tag) => {
-              if (tag.tagName.indexOf('@saga') === 0) {
-                tags.push(tag)
-              }
-              return tags
-            }, [])
-            .map((tag) => {
-              const name = tag.tagName.slice(5)
-              const splitValue = tag.tagValue.split(' - ')
-              const value = splitValue[0]
-              const desc = splitValue[1]
-
-              return `      <tr data-ice="property" data-depth="0">
-            <td data-ice="type" class="code" data-depth="0">${name}</td>
-            <td data-ice="value" class="code">${value}</td>
-            <td data-ice="description"><p>${desc}</p></td>
-          </tr>`
-            }).join('\n')
-        }
+        const node = anchorNode.parent
 
         const sagaEffectsTable = `<h4 data-ice="title">Saga Effects:</h4>
       <table class="params">
@@ -111,7 +162,7 @@ module.exports = class SagaPlugin {
         </thead>
 
         <tbody>
-    ${parseSagaTags(saga)}
+    ${this.parseSagaTags(saga)}
         </tbody>
 
       </table>`
@@ -136,13 +187,34 @@ module.exports = class SagaPlugin {
       })
 
       // reserialize the dom, and replace the content provided in the event
-      content = htmlparser.DomUtils.getOuterHTML(dom)
-    })
+      contentObj.content = htmlparser.DomUtils.getOuterHTML(dom)
+    }
+  }
+
+
+  /**
+   * Plugin execution function.
+   * If given html, will insert tables documenting the aggregated
+   * sagas below the parameter tables
+   * @param {string} content - content that is potentially html
+   * @public
+   */
+  exec (content) {
+    if (!this.isHTML(content)) {
+      return content
+    }
+
+    /**
+     * avoid mutating the original content
+     * @type {string}
+     */
+    const contentWrapper = { content }
+    const domHandler = new htmlparser.DomHandler(this.getDomInjector(contentWrapper))
     const parser = new htmlparser.Parser(domHandler)
 
     parser.write(content)
     parser.end()
 
-    return content
+    return contentWrapper.content
   }
 }
