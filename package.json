@@ -1,6 +1,6 @@
 {
   "name": "esdoc-saga-plugin",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "An ESDoc plugin for describing sagas",
   "main": "src/index.js",
   "directories": {
@@ -27,5 +27,12 @@
   },
   "dependencies": {
     "htmlparser2": "^3.9.2"
-  }
+  },
+  "keywords": [
+    "esdoc",
+    "redux",
+    "redux-saga",
+    "saga",
+    "effect"
+  ]
 }
