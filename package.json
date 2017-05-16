@@ -1,13 +1,14 @@
 {
   "name": "esdoc-saga-plugin",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "An ESDoc plugin for describing sagas",
   "main": "src/index.js",
   "directories": {
     "src": "src"
   },
   "scripts": {
-    "test": "cd test && esdoc"
+    "test": "cd test && esdoc",
+    "docs": "esdoc"
   },
   "repository": {
     "type": "git",

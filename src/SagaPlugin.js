@@ -70,11 +70,13 @@ module.exports = class SagaPlugin {
       .join('\n')
   }
 
+  /*
+   */
+
   /**
    * Travels a dom tree, and inserts a saga effects tables if the
    * appropriate location is found.
-   * Expects dom to be in the json format:
-   * {
+   * Expects dom to be in the json format: {
    *   data: String,
    *   type: String, // e.g. tag or text
    *   name: String, // e.g. div or html
@@ -82,13 +84,13 @@ module.exports = class SagaPlugin {
    *   children: [Node],
    *   next: Node,
    *   prev: Node,
-   *   parent: Node,
+   *   parent: Node
    * }
    * @param {Object} contentWrapper
    * @property {string} content - an html string
    * @private
    */
-  getDomInjector (contentObj) {
+  getDomInjector (contentWrapper) {
     return (error, dom) => {
       if (error) {
         console.error(error)
@@ -187,7 +189,7 @@ module.exports = class SagaPlugin {
       })
 
       // reserialize the dom, and replace the content provided in the event
-      contentObj.content = htmlparser.DomUtils.getOuterHTML(dom)
+      contentWrapper.content = htmlparser.DomUtils.getOuterHTML(dom)
     }
   }
 

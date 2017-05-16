@@ -1,4 +1,38 @@
 {
-  "source": "./node_modules/esdoc/out/src",
-  "destination": "./doc"
+  "source": "./src",
+  "destination": "./doc",
+  "package": false,
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "lint": true,
+        "coverage": true,
+        "access": ["public", "protected", "private"],
+        "autoPrivate": true,
+        "undocumentIdentifier": true,
+        "unexportedIdentifier": true,
+        "title": "Esdoc Saga Plugin",
+        "repository": "https://github.com/angelbeltran/esdoc-saga-plugin",
+        "typeInference": true
+      }
+    },
+    {
+      "name": "esdoc-ecmascript-proposal-plugin",
+      "option": {
+        "classProperties": true,
+        "objectRestSpread": true,
+        "doExpressions": true,
+        "functionBind": true,
+        "functionSent": true,
+        "asyncGenerators": true,
+        "decorators": true,
+        "exportExtensions": true,
+        "dynamicImport": true,
+        "debug": true
+      }
+    }
+  ],
+  "builtinExternal": false,
+  "index": "./src/index.js"
 }
