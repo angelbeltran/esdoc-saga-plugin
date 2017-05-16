@@ -36,6 +36,6 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-# generated docs
+# generated test docs
 test/doc
-doc
+test/docs

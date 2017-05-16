@@ -1,0 +1,908 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/SagaPlugin.js",
+    "content": "const htmlparser = require(\"htmlparser2\")\n\n\n/**\n * The plugin aggregates sagas found during parsing using\n * it's push method, and inserts content into the html\n * based on the sagas using the exec method\n */\nmodule.exports = class SagaPlugin {\n  /**\n   * Initialized the list of sagas, optionally accepting a list\n   * of sagas to initialize with\n   * @param {function[]} sagas - array of sagas, generator functions\n   * saga* tags\n   */\n  constructor (sagas) {\n    // for tracking the sagas being documented\n    /**\n     * @type {function[]} sagas with documentation to create\n     */\n    this._sagas = [].concat(sagas || [])\n  }\n\n  /**\n   * Simply pushes its arguments to the saga list\n   * @public\n   */\n  push () {\n    for (let i = 0; i < arguments.length; this._sagas.push(arguments[i++])) {}\n  }\n\n  /**\n   * Checks if a string is html\n   * @param {string} content\n   * @private\n   */\n  isHTML (content) {\n    return content.indexOf('<!DOCTYPE html>') === 0\n  }\n\n  /**\n   * Generates a saga effect table row\n   * @param {object} tag - a ESDoc tag object\n   * @return {string} an html <tr>\n   * @private\n   */\n  generateTableEntry (tag) {\n    const name = tag.tagName.slice(5)\n    const splitValue = tag.tagValue.split(' - ')\n    const value = splitValue[0]\n    const desc = splitValue[1]\n\n    return `      <tr data-ice=\"property\" data-depth=\"0\">\n      <td data-ice=\"type\" class=\"code\" data-depth=\"0\">${name}</td>\n      <td data-ice=\"value\" class=\"code\">${value}</td>\n      <td data-ice=\"description\"><p>${desc}</p></td>\n    </tr>`\n  }\n\n  /**\n   * Generates an html table for saga effect info, if any, on a doc\n   * @param {object} doc - an ESDoc doc object\n   * @return {string} rows, html <tr>, for a saga effect table\n   * @private\n   */\n  parseSagaTags (doc) {\n    return (doc.unknown || [])\n      .filter((tag) => tag.tagName.indexOf('@saga') === 0)\n      .map(this.generateTableEntry)\n      .join('\\n')\n  }\n\n  /*\n   */\n\n  /**\n   * Travels a dom tree, and inserts a saga effects tables if the\n   * appropriate location is found.\n   * Expects dom to be in the json format: {\n   *   data: String,\n   *   type: String, // e.g. tag or text\n   *   name: String, // e.g. div or html\n   *   attribs: Object,\n   *   children: [Node],\n   *   next: Node,\n   *   prev: Node,\n   *   parent: Node\n   * }\n   * @param {Object} contentWrapper\n   * @property {string} content - an html string\n   * @private\n   */\n  getDomInjector (contentWrapper) {\n    return (error, dom) => {\n      if (error) {\n        console.error(error)\n        return\n      }\n\n      this._sagas.forEach((saga) => {\n        /* Attach the table to the bottom of the tree:\n         *  <html>\n         *    <body class=\"layout-container\" data-ice=\"rootContainer\">\n         *      <div class=\"content\" data-ice=\"content\">\n         *        <div data-ice=\"details\">\n         *          <div class=\"detail\" data-ice=\"detail\">\n         *            <h3 data-ice=\"anchor\" id=\"static-function-${saga.name}>\n         *            < ... >\n         *            < insert node here >\n         */\n        /**\n         * @type {Array<function(n: object, s: object)>} list of dom queries\n         */\n        const query = [\n          (n) => n.name === 'html',\n          (n) => n.name === 'body' && n.attribs.class === 'layout-container' && n.attribs['data-ice'] === 'rootContainer',\n          (n) => n.name === 'div' && n.attribs.class === 'content' && n.attribs['data-ice'] === 'content',\n          (n) => n.name === 'div' && n.attribs['data-ice'] === 'details',\n          (n) => n.name === 'div' && n.attribs.class === 'detail' && n.attribs['data-ice'] === 'detail',\n          (n) => n.name === 'h3' && n.attribs['data-ice'] === 'anchor' && n.attribs.id === `static-function-${saga.name}`,\n        ]\n        // query = [(HtmlNode) => Boolean]\n        /**\n         * Finds a dom node matching a query\n         * @param {Array<function(n: object, s: object)>} query to perform upon dom node and descendants\n         * @param {object} node - dom node to query\n         */\n        function search (query, node) {\n          if (query[0](node)) {\n            if (query.length === 1) {\n              return node\n            } else {\n              return (node.children || []).reduce(\n                (match, child, i) => match || search(query.slice(1), child),\n                null\n              )\n            }\n          }\n\n          return null\n        }\n\n        /**\n         * The matching html node, if found\n         * @type {object}\n         */\n        let anchorNode\n        for (let i = 0; i < dom.length; i++) {\n          anchorNode = search(query, dom[i], dom)\n          if (anchorNode) {\n            break\n          }\n        }\n        if (!anchorNode) {\n          return\n        }\n        const node = anchorNode.parent\n\n        const sagaEffectsTable = `<h4 data-ice=\"title\">Saga Effects:</h4>\n      <table class=\"params\">\n\n        <thead>\n          <tr><td>Type</td><td>Value</td><td>Description</td></tr>\n        </thead>\n\n        <tbody>\n    ${this.parseSagaTags(saga)}\n        </tbody>\n\n      </table>`\n\n        // insert the new html\n        const innerDomHandler = new htmlparser.DomHandler(function (error, dom) {\n          if (error) {\n            throw error\n          } else {\n            node.children = node.children.concat(dom)\n            for (let i = 0; i < node.children.length - 1; i++) {\n              node.children[i].next = node.children[i + 1]\n              node.children[i + 1].prev = node.children[i]\n              node.children[i].parent = node.children[i + 1].parent = node\n            }\n          }\n        })\n        const innerParser = new htmlparser.Parser(innerDomHandler)\n\n        innerParser.write(sagaEffectsTable)\n        innerParser.end()\n      })\n\n      // reserialize the dom, and replace the content provided in the event\n      contentWrapper.content = htmlparser.DomUtils.getOuterHTML(dom)\n    }\n  }\n\n\n  /**\n   * Plugin execution function.\n   * If given html, will insert tables documenting the aggregated\n   * sagas below the parameter tables\n   * @param {string} content - content that is potentially html\n   * @public\n   */\n  exec (content) {\n    if (!this.isHTML(content)) {\n      return content\n    }\n\n    /**\n     * avoid mutating the original content\n     * @type {string}\n     */\n    const contentWrapper = { content }\n    const domHandler = new htmlparser.DomHandler(this.getDomInjector(contentWrapper))\n    const parser = new htmlparser.Parser(domHandler)\n\n    parser.write(content)\n    parser.end()\n\n    return contentWrapper.content\n  }\n}\n",
+    "static": true,
+    "longname": "/home/angel/dev/esdoc-saga-plugin/src/SagaPlugin.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "htmlparser",
+    "memberof": "src/SagaPlugin.js",
+    "static": true,
+    "longname": "src/SagaPlugin.js~htmlparser",
+    "access": "public",
+    "export": false,
+    "importPath": "esdoc-saga-plugin/src/SagaPlugin.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "class",
+    "name": "exports",
+    "memberof": "src/SagaPlugin.js",
+    "static": true,
+    "longname": "src/SagaPlugin.js~exports",
+    "access": "public",
+    "export": false,
+    "importPath": "esdoc-saga-plugin/src/SagaPlugin.js",
+    "importStyle": null,
+    "description": "The plugin aggregates sagas found during parsing using\nit's push method, and inserts content into the html\nbased on the sagas using the exec method",
+    "lineNumber": 9,
+    "interface": false
+  },
+  {
+    "__docId__": 51,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/SagaPlugin.js~exports",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/SagaPlugin.js~exports#constructor",
+    "access": "public",
+    "description": "Initialized the list of sagas, optionally accepting a list\nof sagas to initialize with",
+    "lineNumber": 16,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "function[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "sagas",
+        "description": "array of sagas, generator functions\nsaga* tags"
+      }
+    ]
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "_sagas",
+    "memberof": "src/SagaPlugin.js~exports",
+    "static": false,
+    "longname": "src/SagaPlugin.js~exports#_sagas",
+    "access": "private",
+    "description": "",
+    "lineNumber": 21,
+    "type": {
+      "nullable": null,
+      "types": [
+        "function[]"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "method",
+    "name": "push",
+    "memberof": "src/SagaPlugin.js~exports",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/SagaPlugin.js~exports#push",
+    "access": "public",
+    "description": "Simply pushes its arguments to the saga list",
+    "lineNumber": 28
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "name": "isHTML",
+    "memberof": "src/SagaPlugin.js~exports",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/SagaPlugin.js~exports#isHTML",
+    "access": "private",
+    "description": "Checks if a string is html",
+    "lineNumber": 37,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "content",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "name": "generateTableEntry",
+    "memberof": "src/SagaPlugin.js~exports",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/SagaPlugin.js~exports#generateTableEntry",
+    "access": "private",
+    "description": "Generates a saga effect table row",
+    "lineNumber": 47,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tag",
+        "description": "a ESDoc tag object"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "an html <tr>"
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "method",
+    "name": "parseSagaTags",
+    "memberof": "src/SagaPlugin.js~exports",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/SagaPlugin.js~exports#parseSagaTags",
+    "access": "private",
+    "description": "Generates an html table for saga effect info, if any, on a doc",
+    "lineNumber": 66,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "doc",
+        "description": "an ESDoc doc object"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "rows, html <tr>, for a saga effect table"
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "name": "getDomInjector",
+    "memberof": "src/SagaPlugin.js~exports",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/SagaPlugin.js~exports#getDomInjector",
+    "access": "private",
+    "description": "Travels a dom tree, and inserts a saga effects tables if the\nappropriate location is found.\nExpects dom to be in the json format: {\n  data: String,\n  type: String, // e.g. tag or text\n  name: String, // e.g. div or html\n  attribs: Object,\n  children: [Node],\n  next: Node,\n  prev: Node,\n  parent: Node\n}",
+    "lineNumber": 93,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "contentWrapper",
+        "description": ""
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "content",
+        "description": "an html string"
+      }
+    ]
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "exec",
+    "memberof": "src/SagaPlugin.js~exports",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/SagaPlugin.js~exports#exec",
+    "access": "public",
+    "description": "Plugin execution function.\nIf given html, will insert tables documenting the aggregated\nsagas below the parameter tables",
+    "lineNumber": 204,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "content",
+        "description": "content that is potentially html"
+      }
+    ]
+  },
+  {
+    "__docId__": 59,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "const SagaPlugin = require('./SagaPlugin')\n\n\nconst sagaPlugin = new SagaPlugin()\n\nmodule.exports.onHandleContent = function(ev) {\n  ev.data.content = sagaPlugin.exec(ev.data.content)\n};\n\nmodule.exports.onHandleDocs = function(ev) {\n  ev.data.docs.filter(d => d.kind === 'function').forEach((d) => {\n    if (d.unknown) {\n      for (let i = 0; i < d.unknown.length; i++) {\n        const unknownTag = d.unknown[i].tagName\n        if (unknownTag.indexOf('@saga') === 0) {\n          sagaPlugin.push(d)\n          break\n        }\n      }\n    }\n  })\n};\n",
+    "static": true,
+    "longname": "/home/angel/dev/esdoc-saga-plugin/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 60,
+    "kind": "variable",
+    "name": "SagaPlugin",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~SagaPlugin",
+    "access": "public",
+    "export": false,
+    "importPath": "esdoc-saga-plugin",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "variable",
+    "name": "sagaPlugin",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~sagaPlugin",
+    "access": "public",
+    "export": false,
+    "importPath": "esdoc-saga-plugin",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "function",
+    "name": "onHandleContent",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~onHandleContent",
+    "access": "public",
+    "export": false,
+    "importPath": "esdoc-saga-plugin",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "name": "onHandleDocs",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~onHandleDocs",
+    "access": "public",
+    "export": false,
+    "importPath": "esdoc-saga-plugin",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true
+  },
+  {
+    "kind": "index",
+    "content": "const SagaPlugin = require('./SagaPlugin')\n\n\nconst sagaPlugin = new SagaPlugin()\n\nmodule.exports.onHandleContent = function(ev) {\n  ev.data.content = sagaPlugin.exec(ev.data.content)\n};\n\nmodule.exports.onHandleDocs = function(ev) {\n  ev.data.docs.filter(d => d.kind === 'function').forEach((d) => {\n    if (d.unknown) {\n      for (let i = 0; i < d.unknown.length; i++) {\n        const unknownTag = d.unknown[i].tagName\n        if (unknownTag.indexOf('@saga') === 0) {\n          sagaPlugin.push(d)\n          break\n        }\n      }\n    }\n  })\n};\n",
+    "longname": "/home/angel/dev/esdoc-saga-plugin/src/index.js",
+    "name": "./src/index.js",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"esdoc-saga-plugin\",\n  \"version\": \"0.2.2\",\n  \"description\": \"An ESDoc plugin for describing sagas\",\n  \"main\": \"src/index.js\",\n  \"directories\": {\n    \"src\": \"src\"\n  },\n  \"scripts\": {\n    \"test\": \"cd test && esdoc\",\n    \"docs\": \"esdoc\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/angelbeltran/esdoc-saga-plugin.git\"\n  },\n  \"author\": \"Angel Beltran\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/angelbeltran/esdoc-saga-plugin/issues\"\n  },\n  \"homepage\": \"https://github.com/angelbeltran/esdoc-saga-plugin#readme\",\n  \"devDependencies\": {\n    \"esdoc\": \"^1.0.0-alpha\",\n    \"esdoc-standard-plugin\": \"0.0.2\",\n    \"esdoc-ecmascript-proposal-plugin\": \"0.0.2\"\n  },\n  \"dependencies\": {\n    \"htmlparser2\": \"^3.9.2\"\n  }\n}\n",
+    "longname": "/home/angel/dev/esdoc-saga-plugin/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/SagaPlugin.js | Esdoc Saga Plugin</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/angelbeltran/esdoc-saga-plugin"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/SagaPlugin.js~exports.html">exports</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onHandleContent">onHandleContent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onHandleDocs">onHandleDocs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-htmlparser">htmlparser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SagaPlugin">SagaPlugin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sagaPlugin">sagaPlugin</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/SagaPlugin.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const htmlparser = require(&quot;htmlparser2&quot;)
+
+
+/**
+ * The plugin aggregates sagas found during parsing using
+ * it&apos;s push method, and inserts content into the html
+ * based on the sagas using the exec method
+ */
+module.exports = class SagaPlugin {
+  /**
+   * Initialized the list of sagas, optionally accepting a list
+   * of sagas to initialize with
+   * @param {function[]} sagas - array of sagas, generator functions
+   * saga* tags
+   */
+  constructor (sagas) {
+    // for tracking the sagas being documented
+    /**
+     * @type {function[]} sagas with documentation to create
+     */
+    this._sagas = [].concat(sagas || [])
+  }
+
+  /**
+   * Simply pushes its arguments to the saga list
+   * @public
+   */
+  push () {
+    for (let i = 0; i &lt; arguments.length; this._sagas.push(arguments[i++])) {}
+  }
+
+  /**
+   * Checks if a string is html
+   * @param {string} content
+   * @private
+   */
+  isHTML (content) {
+    return content.indexOf(&apos;&lt;!DOCTYPE html&gt;&apos;) === 0
+  }
+
+  /**
+   * Generates a saga effect table row
+   * @param {object} tag - a ESDoc tag object
+   * @return {string} an html &lt;tr&gt;
+   * @private
+   */
+  generateTableEntry (tag) {
+    const name = tag.tagName.slice(5)
+    const splitValue = tag.tagValue.split(&apos; - &apos;)
+    const value = splitValue[0]
+    const desc = splitValue[1]
+
+    return `      &lt;tr data-ice=&quot;property&quot; data-depth=&quot;0&quot;&gt;
+      &lt;td data-ice=&quot;type&quot; class=&quot;code&quot; data-depth=&quot;0&quot;&gt;${name}&lt;/td&gt;
+      &lt;td data-ice=&quot;value&quot; class=&quot;code&quot;&gt;${value}&lt;/td&gt;
+      &lt;td data-ice=&quot;description&quot;&gt;&lt;p&gt;${desc}&lt;/p&gt;&lt;/td&gt;
+    &lt;/tr&gt;`
+  }
+
+  /**
+   * Generates an html table for saga effect info, if any, on a doc
+   * @param {object} doc - an ESDoc doc object
+   * @return {string} rows, html &lt;tr&gt;, for a saga effect table
+   * @private
+   */
+  parseSagaTags (doc) {
+    return (doc.unknown || [])
+      .filter((tag) =&gt; tag.tagName.indexOf(&apos;@saga&apos;) === 0)
+      .map(this.generateTableEntry)
+      .join(&apos;\n&apos;)
+  }
+
+  /*
+   */
+
+  /**
+   * Travels a dom tree, and inserts a saga effects tables if the
+   * appropriate location is found.
+   * Expects dom to be in the json format: {
+   *   data: String,
+   *   type: String, // e.g. tag or text
+   *   name: String, // e.g. div or html
+   *   attribs: Object,
+   *   children: [Node],
+   *   next: Node,
+   *   prev: Node,
+   *   parent: Node
+   * }
+   * @param {Object} contentWrapper
+   * @property {string} content - an html string
+   * @private
+   */
+  getDomInjector (contentWrapper) {
+    return (error, dom) =&gt; {
+      if (error) {
+        console.error(error)
+        return
+      }
+
+      this._sagas.forEach((saga) =&gt; {
+        /* Attach the table to the bottom of the tree:
+         *  &lt;html&gt;
+         *    &lt;body class=&quot;layout-container&quot; data-ice=&quot;rootContainer&quot;&gt;
+         *      &lt;div class=&quot;content&quot; data-ice=&quot;content&quot;&gt;
+         *        &lt;div data-ice=&quot;details&quot;&gt;
+         *          &lt;div class=&quot;detail&quot; data-ice=&quot;detail&quot;&gt;
+         *            &lt;h3 data-ice=&quot;anchor&quot; id=&quot;static-function-${saga.name}&gt;
+         *            &lt; ... &gt;
+         *            &lt; insert node here &gt;
+         */
+        /**
+         * @type {Array&lt;function(n: object, s: object)&gt;} list of dom queries
+         */
+        const query = [
+          (n) =&gt; n.name === &apos;html&apos;,
+          (n) =&gt; n.name === &apos;body&apos; &amp;&amp; n.attribs.class === &apos;layout-container&apos; &amp;&amp; n.attribs[&apos;data-ice&apos;] === &apos;rootContainer&apos;,
+          (n) =&gt; n.name === &apos;div&apos; &amp;&amp; n.attribs.class === &apos;content&apos; &amp;&amp; n.attribs[&apos;data-ice&apos;] === &apos;content&apos;,
+          (n) =&gt; n.name === &apos;div&apos; &amp;&amp; n.attribs[&apos;data-ice&apos;] === &apos;details&apos;,
+          (n) =&gt; n.name === &apos;div&apos; &amp;&amp; n.attribs.class === &apos;detail&apos; &amp;&amp; n.attribs[&apos;data-ice&apos;] === &apos;detail&apos;,
+          (n) =&gt; n.name === &apos;h3&apos; &amp;&amp; n.attribs[&apos;data-ice&apos;] === &apos;anchor&apos; &amp;&amp; n.attribs.id === `static-function-${saga.name}`,
+        ]
+        // query = [(HtmlNode) =&gt; Boolean]
+        /**
+         * Finds a dom node matching a query
+         * @param {Array&lt;function(n: object, s: object)&gt;} query to perform upon dom node and descendants
+         * @param {object} node - dom node to query
+         */
+        function search (query, node) {
+          if (query[0](node)) {
+            if (query.length === 1) {
+              return node
+            } else {
+              return (node.children || []).reduce(
+                (match, child, i) =&gt; match || search(query.slice(1), child),
+                null
+              )
+            }
+          }
+
+          return null
+        }
+
+        /**
+         * The matching html node, if found
+         * @type {object}
+         */
+        let anchorNode
+        for (let i = 0; i &lt; dom.length; i++) {
+          anchorNode = search(query, dom[i], dom)
+          if (anchorNode) {
+            break
+          }
+        }
+        if (!anchorNode) {
+          return
+        }
+        const node = anchorNode.parent
+
+        const sagaEffectsTable = `&lt;h4 data-ice=&quot;title&quot;&gt;Saga Effects:&lt;/h4&gt;
+      &lt;table class=&quot;params&quot;&gt;
+
+        &lt;thead&gt;
+          &lt;tr&gt;&lt;td&gt;Type&lt;/td&gt;&lt;td&gt;Value&lt;/td&gt;&lt;td&gt;Description&lt;/td&gt;&lt;/tr&gt;
+        &lt;/thead&gt;
+
+        &lt;tbody&gt;
+    ${this.parseSagaTags(saga)}
+        &lt;/tbody&gt;
+
+      &lt;/table&gt;`
+
+        // insert the new html
+        const innerDomHandler = new htmlparser.DomHandler(function (error, dom) {
+          if (error) {
+            throw error
+          } else {
+            node.children = node.children.concat(dom)
+            for (let i = 0; i &lt; node.children.length - 1; i++) {
+              node.children[i].next = node.children[i + 1]
+              node.children[i + 1].prev = node.children[i]
+              node.children[i].parent = node.children[i + 1].parent = node
+            }
+          }
+        })
+        const innerParser = new htmlparser.Parser(innerDomHandler)
+
+        innerParser.write(sagaEffectsTable)
+        innerParser.end()
+      })
+
+      // reserialize the dom, and replace the content provided in the event
+      contentWrapper.content = htmlparser.DomUtils.getOuterHTML(dom)
+    }
+  }
+
+
+  /**
+   * Plugin execution function.
+   * If given html, will insert tables documenting the aggregated
+   * sagas below the parameter tables
+   * @param {string} content - content that is potentially html
+   * @public
+   */
+  exec (content) {
+    if (!this.isHTML(content)) {
+      return content
+    }
+
+    /**
+     * avoid mutating the original content
+     * @type {string}
+     */
+    const contentWrapper = { content }
+    const domHandler = new htmlparser.DomHandler(this.getDomInjector(contentWrapper))
+    const parser = new htmlparser.Parser(domHandler)
+
+    parser.write(content)
+    parser.end()
+
+    return contentWrapper.content
+  }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.0-alpha.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
