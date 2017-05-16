@@ -1,8 +1,12 @@
 # esdoc-saga-plugin
-An ESDoc plugin for sagas
+An ESDoc plugin for documenting redux-sagas effects.
+
 
 ## Description
-Adds tag recognition to ESDoc for saga effect descriptions. For example
+This plugin is aimed to be compatible with ESDoc 1.0.0+, and will not likely work with pre-1.0.0 versions.
+This plugin recognizes tags of the form @saga\<effect\> on functions, and tabulates the information, like with @param tags, just below the Params table in the respective function doc.
+
+## Example
 
 ```javascript
 /**
