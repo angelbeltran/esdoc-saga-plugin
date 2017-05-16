@@ -30,19 +30,21 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/SagaPlugin.js~exports.html">exports</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onHandleContent">onHandleContent</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-onHandleDocs">onHandleDocs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/index.js~SomeClass.html">SomeClass</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-anotherSaga">anotherSaga</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-noParamsSaga">noParamsSaga</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-someSaga">someSaga</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-htmlparser">htmlparser</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SagaPlugin">SagaPlugin</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-sagaPlugin">sagaPlugin</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="esdoc-saga-plugin">esdoc-saga-plugin</h1>
-<p>An ESDoc plugin for sagas</p>
+<p>An ESDoc plugin for documenting redux-sagas effects.</p>
 <h2 id="description">Description</h2>
-<p>Adds tag recognition to ESDoc for saga effect descriptions. For example</p>
+<p>This plugin is aimed to be compatible with ESDoc 1.0.0+, and will not likely work with pre-1.0.0 versions.
+This plugin recognizes tags of the form @saga\&lt;effect\&gt; on functions, and tabulates the information, like with @param tags, just below the Params table in the respective function doc.</p>
+<h2 id="example">Example</h2>
 <pre><code class="lang-javascript"><code class="source-code prettyprint">/**
  * @param {string} someArg1 - some string
  * @param {number} someArg2 - some number

@@ -1,7 +1,7 @@
 {
-  "coverage": "64.28%",
-  "expectCount": 14,
-  "actualCount": 9,
+  "coverage": "94.11%",
+  "expectCount": 17,
+  "actualCount": 16,
   "files": {
     "src/SagaPlugin.js": {
       "expectCount": 10,
@@ -11,14 +11,9 @@
       ]
     },
     "src/index.js": {
-      "expectCount": 4,
-      "actualCount": 0,
-      "undocumentLines": [
-        1,
-        4,
-        6,
-        10
-      ]
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
     }
   }
 }

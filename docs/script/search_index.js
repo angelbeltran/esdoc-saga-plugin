@@ -1,9 +1,15 @@
 window.esdocSearchIndex = [
   [
-    "esdoc-saga-plugin~sagaplugin",
-    "variable/index.html#static-variable-SagaPlugin",
-    "<span>SagaPlugin</span> <span class=\"search-result-import-path\">esdoc-saga-plugin</span>",
-    "variable"
+    "esdoc-saga-plugin~someclass",
+    "class/src/index.js~SomeClass.html",
+    "<span>SomeClass</span> <span class=\"search-result-import-path\">esdoc-saga-plugin</span>",
+    "class"
+  ],
+  [
+    "esdoc-saga-plugin~anothersaga",
+    "function/index.html#static-function-anotherSaga",
+    "<span>anotherSaga</span> <span class=\"search-result-import-path\">esdoc-saga-plugin</span>",
+    "function"
   ],
   [
     "esdoc-saga-plugin/src/sagaplugin.js~exports",
@@ -18,22 +24,16 @@ window.esdocSearchIndex = [
     "variable"
   ],
   [
-    "esdoc-saga-plugin~onhandlecontent",
-    "function/index.html#static-function-onHandleContent",
-    "<span>onHandleContent</span> <span class=\"search-result-import-path\">esdoc-saga-plugin</span>",
+    "esdoc-saga-plugin~noparamssaga",
+    "function/index.html#static-function-noParamsSaga",
+    "<span>noParamsSaga</span> <span class=\"search-result-import-path\">esdoc-saga-plugin</span>",
     "function"
   ],
   [
-    "esdoc-saga-plugin~onhandledocs",
-    "function/index.html#static-function-onHandleDocs",
-    "<span>onHandleDocs</span> <span class=\"search-result-import-path\">esdoc-saga-plugin</span>",
+    "esdoc-saga-plugin~somesaga",
+    "function/index.html#static-function-someSaga",
+    "<span>someSaga</span> <span class=\"search-result-import-path\">esdoc-saga-plugin</span>",
     "function"
-  ],
-  [
-    "esdoc-saga-plugin~sagaplugin",
-    "variable/index.html#static-variable-sagaPlugin",
-    "<span>sagaPlugin</span> <span class=\"search-result-import-path\">esdoc-saga-plugin</span>",
-    "variable"
   ],
   [
     "src/.external-ecmascript.js~array",
@@ -376,5 +376,23 @@ window.esdocSearchIndex = [
     "file/src/index.js.html",
     "src/index.js",
     "file"
+  ],
+  [
+    "src/index.js~someclass#constructor",
+    "class/src/index.js~SomeClass.html#instance-constructor-constructor",
+    "src/index.js~SomeClass#constructor",
+    "method"
+  ],
+  [
+    "src/index.js~someclass#somemethod",
+    "class/src/index.js~SomeClass.html#instance-method-someMethod",
+    "src/index.js~SomeClass#someMethod",
+    "method"
+  ],
+  [
+    "src/index.js~someclass#val",
+    "class/src/index.js~SomeClass.html#instance-member-val",
+    "src/index.js~SomeClass#val",
+    "member"
   ]
 ]

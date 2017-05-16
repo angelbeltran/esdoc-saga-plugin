@@ -818,7 +818,7 @@
     "__docId__": 59,
     "kind": "file",
     "name": "src/index.js",
-    "content": "const SagaPlugin = require('./SagaPlugin')\n\n\nconst sagaPlugin = new SagaPlugin()\n\nmodule.exports.onHandleContent = function(ev) {\n  ev.data.content = sagaPlugin.exec(ev.data.content)\n};\n\nmodule.exports.onHandleDocs = function(ev) {\n  ev.data.docs.filter(d => d.kind === 'function').forEach((d) => {\n    if (d.unknown) {\n      for (let i = 0; i < d.unknown.length; i++) {\n        const unknownTag = d.unknown[i].tagName\n        if (unknownTag.indexOf('@saga') === 0) {\n          sagaPlugin.push(d)\n          break\n        }\n      }\n    }\n  })\n};\n",
+    "content": "import { take, put, call, fork, select, all } from 'redux-saga/effects'\n\n/**\n * Some saga\n * @param {string} someArg1 - some string\n * @param {number} someArg2 - some number\n * @param {boolean} someArg3 - some boolean\n * @sagaselect someSubstate - some part of the state\n * @sagatake SOME_ACTION_TYPE - some action type\n * @sagacall someApiCall - some api call\n */\nexport function* someSaga (someArg1, someArg2, someArg3) {\n  const something = yield select((state) => state.someSubstate)\n\n  return !!something.something\n}\n\n/**\n * @param {string} anotherArg1 - another string\n * @param {number} anotherArg2 - another number\n * @param {boolean} anotherArg3 - another boolean\n * @sagaselect anotherSubstate - another part of the state\n * @sagaput ANOTHER_ACTION_TYPE - another action type\n * @sagacall anotherApiCall - another api call\n */\nfunction* anotherSaga (anotherArg1, anotherArg2, anotherArg3) {\n  const anotherThing = yield select((state) => state.anotherSubstate)\n\n  return !!anotherThing.anotherThing\n}\n\n/**\n * A saga with no params\n * @sagaselect anotherSubstate - another part of the state\n * @sagaput ANOTHER_ACTION_TYPE - another action type\n * @sagacall anotherApiCall - another api call\n */\nfunction* noParamsSaga () {\n  const whatever = yield select((state) => state.whatever)\n\n  return !!whatever.whatever\n}\n\n/**\n * @example const inst = new SomeClass(val)\n */\nclass SomeClass {\n  /**\n   * @param {string} val - some string value\n   */\n  constructor (val) {\n    /**\n     * @type {string} SomeClass#val\n     */\n    this.val = val\n  }\n\n  /**\n   * @param {string} someParam - some string parameter\n   */\n  someMethod (someParam) {\n    console.log(someParam)\n  }\n}\n\nexport default {\n  someSaga,\n  SomeClass,\n}\n",
     "static": true,
     "longname": "/home/angel/dev/esdoc-saga-plugin/src/index.js",
     "access": "public",
@@ -827,71 +827,248 @@
   },
   {
     "__docId__": 60,
-    "kind": "variable",
-    "name": "SagaPlugin",
+    "kind": "function",
+    "name": "someSaga",
     "memberof": "src/index.js",
+    "generator": true,
+    "async": false,
     "static": true,
-    "longname": "src/index.js~SagaPlugin",
+    "longname": "src/index.js~someSaga",
     "access": "public",
-    "export": false,
+    "export": true,
     "importPath": "esdoc-saga-plugin",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true
+    "importStyle": "{someSaga}",
+    "description": "Some saga",
+    "lineNumber": 12,
+    "unknown": [
+      {
+        "tagName": "@sagaselect",
+        "tagValue": "someSubstate - some part of the state"
+      },
+      {
+        "tagName": "@sagatake",
+        "tagValue": "SOME_ACTION_TYPE - some action type"
+      },
+      {
+        "tagName": "@sagacall",
+        "tagValue": "someApiCall - some api call"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "someArg1",
+        "description": "some string"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "someArg2",
+        "description": "some number"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "someArg3",
+        "description": "some boolean"
+      }
+    ]
   },
   {
     "__docId__": 61,
-    "kind": "variable",
-    "name": "sagaPlugin",
+    "kind": "function",
+    "name": "anotherSaga",
     "memberof": "src/index.js",
+    "generator": true,
+    "async": false,
     "static": true,
-    "longname": "src/index.js~sagaPlugin",
+    "longname": "src/index.js~anotherSaga",
     "access": "public",
     "export": false,
     "importPath": "esdoc-saga-plugin",
     "importStyle": null,
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true
+    "description": "",
+    "lineNumber": 26,
+    "unknown": [
+      {
+        "tagName": "@sagaselect",
+        "tagValue": "anotherSubstate - another part of the state"
+      },
+      {
+        "tagName": "@sagaput",
+        "tagValue": "ANOTHER_ACTION_TYPE - another action type"
+      },
+      {
+        "tagName": "@sagacall",
+        "tagValue": "anotherApiCall - another api call"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "anotherArg1",
+        "description": "another string"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "anotherArg2",
+        "description": "another number"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "anotherArg3",
+        "description": "another boolean"
+      }
+    ]
   },
   {
     "__docId__": 62,
     "kind": "function",
-    "name": "onHandleContent",
+    "name": "noParamsSaga",
     "memberof": "src/index.js",
-    "generator": false,
+    "generator": true,
     "async": false,
     "static": true,
-    "longname": "src/index.js~onHandleContent",
+    "longname": "src/index.js~noParamsSaga",
     "access": "public",
     "export": false,
     "importPath": "esdoc-saga-plugin",
     "importStyle": null,
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true
+    "description": "A saga with no params",
+    "lineNumber": 38,
+    "unknown": [
+      {
+        "tagName": "@sagaselect",
+        "tagValue": "anotherSubstate - another part of the state"
+      },
+      {
+        "tagName": "@sagaput",
+        "tagValue": "ANOTHER_ACTION_TYPE - another action type"
+      },
+      {
+        "tagName": "@sagacall",
+        "tagValue": "anotherApiCall - another api call"
+      }
+    ]
   },
   {
     "__docId__": 63,
-    "kind": "function",
-    "name": "onHandleDocs",
+    "kind": "class",
+    "name": "SomeClass",
     "memberof": "src/index.js",
-    "generator": false,
-    "async": false,
     "static": true,
-    "longname": "src/index.js~onHandleDocs",
+    "longname": "src/index.js~SomeClass",
     "access": "public",
     "export": false,
     "importPath": "esdoc-saga-plugin",
     "importStyle": null,
-    "description": null,
-    "lineNumber": 10,
-    "undocument": true
+    "description": "",
+    "examples": [
+      "const inst = new SomeClass(val)"
+    ],
+    "lineNumber": 47,
+    "interface": false
+  },
+  {
+    "__docId__": 64,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/index.js~SomeClass",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~SomeClass#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 51,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "val",
+        "description": "some string value"
+      }
+    ]
+  },
+  {
+    "__docId__": 65,
+    "kind": "member",
+    "name": "val",
+    "memberof": "src/index.js~SomeClass",
+    "static": false,
+    "longname": "src/index.js~SomeClass#val",
+    "access": "public",
+    "description": "",
+    "lineNumber": 55,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "someMethod",
+    "memberof": "src/index.js~SomeClass",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/index.js~SomeClass#someMethod",
+    "access": "public",
+    "description": "",
+    "lineNumber": 61,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "someParam",
+        "description": "some string parameter"
+      }
+    ]
   },
   {
     "kind": "index",
-    "content": "# esdoc-saga-plugin\nAn ESDoc plugin for sagas\n\n## Description\nAdds tag recognition to ESDoc for saga effect descriptions. For example\n\n```javascript\n/**\n * @param {string} someArg1 - some string\n * @param {number} someArg2 - some number\n * @param {boolean} someArg3 - some boolean\n * @sagaselect someSubstate - some part of the state\n * @sagatake SOME_ACTION_TYPE - some action type\n * @sagacall someApiCall - some api call\n */\nexport function* someSaga (someArg1, someArg2, someArg3) {\n  const someSubstate = yield select((state) => state.someSubstate)\n \n  if (someSubstate.someProp) {\n    yield put({ type: 'SOME_ACTION_TYPE' })\n    yield call(someApiCall)\n  }\n}\n```\n",
+    "content": "# esdoc-saga-plugin\nAn ESDoc plugin for documenting redux-sagas effects.\n\n\n## Description\nThis plugin is aimed to be compatible with ESDoc 1.0.0+, and will not likely work with pre-1.0.0 versions.\nThis plugin recognizes tags of the form @saga\\<effect\\> on functions, and tabulates the information, like with @param tags, just below the Params table in the respective function doc.\n\n## Example\n\n```javascript\n/**\n * @param {string} someArg1 - some string\n * @param {number} someArg2 - some number\n * @param {boolean} someArg3 - some boolean\n * @sagaselect someSubstate - some part of the state\n * @sagatake SOME_ACTION_TYPE - some action type\n * @sagacall someApiCall - some api call\n */\nexport function* someSaga (someArg1, someArg2, someArg3) {\n  const someSubstate = yield select((state) => state.someSubstate)\n \n  if (someSubstate.someProp) {\n    yield put({ type: 'SOME_ACTION_TYPE' })\n    yield call(someApiCall)\n  }\n}\n```\n",
     "longname": "/home/angel/dev/esdoc-saga-plugin/README.md",
     "name": "./README.md",
     "static": true,
